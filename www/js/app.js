@@ -79,7 +79,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           controller: 'AccountCtrl'
         }
       }
+    })
+    .state('registro', {
+      url: '/registro',
+      views: {
+        'registro': {
+          templateUrl: 'templates/registro.html',
+          controller: 'registroCtrl'
+        }
+      }
     });
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
