@@ -1,0 +1,7 @@
+.login {
+  background: url("../img/login_back.jpg") no-repeat;
+  background-size: cover;
+}
+.login img {
+  width: 62%;
+}
