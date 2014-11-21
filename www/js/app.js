@@ -86,6 +86,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
+    .state('profile_type', {
+      url: '/profile_type',
+          templateUrl: 'templates/profile_type.html',
+    })
+
+    .state('profile', {
+      url: '/profile',
+          templateUrl: 'templates/profile.html',
+    })
+
+    .state('timeline', {
+      url: '/timeline',
+          templateUrl: 'templates/timeline.html',
+    });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 

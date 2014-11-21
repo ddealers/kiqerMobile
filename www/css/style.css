@@ -35,11 +35,13 @@
   -ms-transform: skew(-10deg);
   -webkit-transform: skew(-10deg);
   -moz-transform: skew(-10deg);
-  min-height: 44px;
+  min-height: 32px !important;
+  height: 20px;
 }
 .login ion-content div .button.button-positive span {
   -webkit-transform: skew(10deg);
   display: block;
+  margin-top: -5px;
 }
 .login ion-content div .button.button-positive i.icon {
   padding: 10px;
@@ -62,7 +64,7 @@
 }
 .login ion-content div.border {
   border-top: 1px solid #353535;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 /* --registro-- */
 .registro {
@@ -118,12 +120,248 @@
   -ms-transform: skew(-10deg);
   -webkit-transform: skew(-10deg);
   -moz-transform: skew(-10deg);
-  min-height: 44px;
+  min-height: 32px !important;
+  height: 20px !important;
+  margin-top: 20px;
 }
 .registro ion-content div .button.button-positive span {
   -webkit-transform: skew(10deg);
   display: block;
+  margin-top: -5px;
 }
 .registro ion-content div .button.button-positive i.icon {
   padding: 10px;
+}
+/* --profile_type-- */
+.profile_type {
+  background: url("../img/login_back.jpg") no-repeat;
+  background-size: cover;
+}
+.profile_type img {
+  width: 62%;
+}
+.profile_type ion-content h1 {
+  margin: 50px 20px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+.profile_type ion-content div {
+  width: 90%;
+  margin: auto;
+}
+.profile_type ion-content div ul {
+  margin-top: 50px;
+}
+.profile_type ion-content div ul li {
+  position: relative;
+  margin-bottom: 25px;
+  background: #05ff11;
+}
+.profile_type ion-content div ul li img {
+  width: 40px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.profile_type ion-content div ul li span {
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  margin: auto;
+  display: block;
+  left: 47px;
+  right: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.profile_type ion-content div ul li i.icon {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  font-size: 20px;
+}
+/* --profile-- */
+.profile div.bar.bar-header.bar-positive,
+.profile .bar.bar-positive {
+  background: -moz-linear-gradient(top, #7bc0e6 0%, #377fa8 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7bc0e6), color-stop(100%, #377fa8));
+}
+.profile div.bar.bar-header.bar-positive i.icon.ion-navicon,
+.profile .bar.bar-positive i.icon.ion-navicon {
+  font-size: 35px;
+  padding-left: 10px;
+  border-right: 1px solid #2c6f94;
+  padding-right: 15px;
+}
+.profile div.bar.bar-header.bar-positive h1 img,
+.profile .bar.bar-positive h1 img {
+  position: absolute;
+  width: 115px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 3px;
+}
+.profile div.bar.bar-subheader.bar-dark {
+  background: #222;
+  height: 35px;
+  top: 44px;
+}
+.profile div.bar.bar-subheader.bar-dark h2 {
+  color: #fff;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.profile div.bar.bar-subheader.bar-dark h2 i.icon {
+  position: absolute;
+  right: 10px;
+  font-size: 27px;
+  bottom: 2px;
+  border-left: 1px solid #4a4a4a;
+  padding-left: 10px;
+}
+.profile .has-header div.contenido {
+  margin-top: 40px;
+}
+.profile .has-header div.contenido div.foto-perfil {
+  height: 50px;
+  position: relative;
+}
+.profile .has-header div.contenido p img {
+  width: 50px;
+  margin: 10px;
+}
+.profile .has-header div.contenido p span {
+  position: absolute;
+  top: 25px;
+  font-weight: 200;
+}
+.profile .has-header div.contenido div.list.list-inset label.item.item-input {
+  border: none;
+  width: 95%;
+}
+.profile .has-header div.contenido div.list.list-inset label.item.item-input input {
+  color: #377fa8;
+  border-bottom: 1px solid #acadad;
+  font-size: 21px;
+  font-weight: 200;
+}
+.profile .has-header div.contenido p.leyend {
+  font-size: 10px;
+  color: #5c5c5c;
+  margin-left: 22px;
+  margin-top: -15px;
+}
+.profile .has-header div.contenido div.b {
+  width: 65%;
+  margin: auto;
+}
+.profile .has-header div.contenido div.b .button.button-positive {
+  background-color: #187ab1;
+  border-color: #156b9c;
+  font-size: 16px;
+  font-weight: bold;
+  transform: skew(-10deg);
+  -ms-transform: skew(-10deg);
+  -webkit-transform: skew(-10deg);
+  -moz-transform: skew(-10deg);
+  min-height: 32px !important;
+  height: 10px !important;
+}
+.profile .has-header div.contenido div.b .button.button-positive span {
+  -webkit-transform: skew(10deg);
+  display: block;
+  margin-top: -5px;
+}
+.profile .has-header div.contenido div.b .button.button-positive i.icon {
+  padding-left: 35px;
+}
+.profile div.tabs.tabs-icon-top {
+  background: #222;
+  height: 55px;
+}
+.profile div.tabs.tabs-icon-top a.tab-item {
+  border-right: 1px solid #000;
+  color: #fff;
+}
+.profile div.tabs.tabs-icon-top a.tab-item:hover {
+  cursor: pointer;
+  border-top: 5px solid #3780a8;
+  border-right: 1px solid #000;
+  color: #fff;
+}
+.profile div.tabs.tabs-icon-top a.tab-item i.icon img {
+  width: 28px;
+  padding-top: 3px;
+}
+.profile div.tabs.tabs-icon-top a.tab-item i.icon img.men {
+  padding-top: 5px;
+  width: 31px;
+}
+/* --timeline-- */
+.timeline div.bar.bar-header.bar-positive,
+.timeline .bar.bar-positive {
+  background: -moz-linear-gradient(top, #7bc0e6 0%, #377fa8 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7bc0e6), color-stop(100%, #377fa8));
+}
+.timeline div.bar.bar-header.bar-positive i.icon.ion-navicon,
+.timeline .bar.bar-positive i.icon.ion-navicon {
+  font-size: 35px;
+  padding-left: 10px;
+  border-right: 1px solid #2c6f94;
+  padding-right: 15px;
+}
+.timeline div.bar.bar-header.bar-positive i.icon.ion-edit,
+.timeline .bar.bar-positive i.icon.ion-edit {
+  position: absolute;
+  right: 10px;
+  padding-top: 5px;
+  font-size: 22px;
+  border-left: 1px solid #2c6f94;
+  padding-left: 13px;
+  height: 35px;
+}
+.timeline div.bar.bar-header.bar-positive h1 img,
+.timeline .bar.bar-positive h1 img {
+  position: absolute;
+  width: 115px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 3px;
+}
+.timeline .has-header {
+  background: #f3f4f4;
+}
+.timeline .has-header div.contenido div.list.card {
+  border-bottom: 1px solid #c0c1c1;
+  border-top: 1px solid #c0c1c1;
+}
+.timeline .has-header div.contenido .card {
+  margin: 20px 0;
+}
+.timeline .has-header div.contenido .card h2 {
+  color: #357ea7;
+  font-weight: bold;
+}
+.timeline .has-header div.contenido .card p.dato {
+  font-size: 10px;
+}
+.timeline .has-header div.contenido .card p.dato span {
+  border-left: 1px solid;
+  padding-left: 2px;
+}
+.timeline .has-header div.contenido .card i.icon.ion-ios7-paper-outline {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 25px;
+}
+.timeline .has-header div.contenido .card div.item.item-body {
+  border: none;
+}
+.timeline .has-header div.contenido .card div.item.item-body p {
+  margin: -20px 10px 0px;
+}
+.timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left {
+  background: #d5e4ed;
 }

@@ -30,10 +30,12 @@ soccer-background()
 				-ms-transform: skew(-10deg);
 				-webkit-transform: skew(-10deg);
 				-moz-transform: skew(-10deg);
-				min-height: 44px
+				min-height: 32px !important
+				height 20px
 				span
 					-webkit-transform: skew(10deg);
 					display block
+					margin-top -5px
 				i.icon
 					padding 10px
 			.button.button-positive.italic
@@ -51,7 +53,7 @@ soccer-background()
 					margin-right 13px
 		div.border 
 			border-top 1px solid #353535
-			padding-top 20px
+			padding-top 10px
 /* --registro-- */
 soccer-background()
 	background url(../img/login_back.jpg) no-repeat
@@ -98,9 +100,207 @@ soccer-background()
 				-ms-transform: skew(-10deg);
 				-webkit-transform: skew(-10deg);
 				-moz-transform: skew(-10deg);
-				min-height: 44px
+				min-height: 32px !important
+				height 20px !important
+				margin-top 20px
 				span
 					-webkit-transform: skew(10deg);
 					display block
+					margin-top -5px
 				i.icon
 					padding 10px
+/* --profile_type-- */
+soccer-background()
+	background url(../img/login_back.jpg) no-repeat
+	background-size cover 
+.profile_type
+	soccer-background()
+	img
+		width 62%
+	ion-content
+		h1
+			margin 50px 20px
+			width 400px
+			margin-bottom: 20px;
+		div
+			width 90%
+			margin auto
+			ul
+				margin-top 50px
+				li
+					position relative
+					margin-bottom 25px
+					background #05ff11
+					img
+						width 40px
+						padding-top 5px
+						padding-left 5px
+					span
+						position absolute
+						top 10px
+						bottom 0
+						margin auto
+						display block
+						left 47px
+						right 0
+						font-size 18px
+						font-weight bold
+					i.icon
+						position absolute
+						top 12px 
+						right 10px
+						font-size 20px
+/* --profile-- */
+.profile
+	div.bar.bar-header.bar-positive
+	.bar.bar-positive
+		background: -moz-linear-gradient(top, #7bc0e6 0%, #377fa8 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7bc0e6), color-stop(100%,#377fa8)); 
+		i.icon.ion-navicon
+			font-size: 35px;
+			padding-left: 10px;
+			border-right: 1px solid #2c6f94;
+			padding-right: 15px;
+		h1 
+			img
+				position: absolute;
+				width: 115px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				top: 3px;
+	div.bar.bar-subheader.bar-dark
+		background #222222
+		height 35px
+		top 44px
+		h2
+			color #fff
+			font-size 20px
+			padding-left 10px
+			i.icon
+				position: absolute;
+				right: 10px;
+				font-size: 27px;
+				bottom: 2px;
+				border-left: 1px solid #4a4a4a;
+				padding-left: 10px;
+	.has-header	
+		div.contenido
+			margin-top 40px
+			div.foto-perfil
+				height 50px
+				position relative
+			p
+				img
+					width 50px
+					margin 10px
+				span
+					position absolute
+					top 25px
+					font-weight 200
+			div.list.list-inset
+				label.item.item-input
+					border none
+					width 95%
+					input 
+						color #377fa8
+						border-bottom 1px solid #acadad
+						font-size 21px
+						font-weight 200
+			p.leyend
+				font-size: 10px;
+				color: #5c5c5c;
+				margin-left: 22px;
+				margin-top: -15px;
+			div.b 
+				width 65%
+				margin auto
+				.button.button-positive
+					background-color: #187ab1
+					border-color: #156b9c
+					font-size 16px
+					font-weight bold
+					transform: skew(-10deg);
+					-ms-transform: skew(-10deg);
+					-webkit-transform: skew(-10deg);
+					-moz-transform: skew(-10deg);
+					min-height: 32px !important
+					height 10px !important
+					span
+						-webkit-transform: skew(10deg);
+						display block
+						margin-top -5px
+					i.icon
+						padding-left 35px
+	div.tabs.tabs-icon-top
+		background #222222
+		height 55px
+		a.tab-item
+			border-right: 1px solid #000;
+			color #fff
+			&:hover
+				cursor: pointer;
+				border-top: 5px solid #3780a8;
+				border-right: 1px solid #000;
+				color #fff
+			i.icon
+				img
+					width 28px
+					padding-top 3px
+					&.men 
+						padding-top 5px
+						width 31px
+/* --timeline-- */
+.timeline
+	div.bar.bar-header.bar-positive
+	.bar.bar-positive
+		background: -moz-linear-gradient(top, #7bc0e6 0%, #377fa8 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7bc0e6), color-stop(100%,#377fa8)); 
+		i.icon.ion-navicon
+			font-size: 35px;
+			padding-left: 10px;
+			border-right: 1px solid #2c6f94;
+			padding-right: 15px;
+		i.icon.ion-edit
+			position absolute
+			right 10px
+			padding-top 5px
+			font-size 22px
+			border-left 1px solid #2c6f94
+			padding-left 13px
+			height 35px
+		h1 
+			img
+				position: absolute;
+				width: 115px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				top: 3px;
+	.has-header
+		background #f3f4f4
+		div.contenido
+			div.list.card
+				border-bottom: 1px solid #c0c1c1
+				border-top: 1px solid #c0c1c1
+			.card
+				margin 20px 0
+				h2
+					color #357ea7
+					font-weight bold
+				p.dato 
+					font-size 10px 
+					span
+						border-left 1px solid
+						padding-left 2px
+				i.icon.ion-ios7-paper-outline
+					position: absolute;
+					right: 20px;
+					top: 15px;
+					font-size: 25px;
+				div.item.item-body
+					border none 
+					p 
+						margin: -20px 10px 0px;
+				div.item.tabs.tabs-secondary.tabs-icon-left
+					background #d5e4ed
