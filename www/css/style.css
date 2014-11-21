@@ -356,6 +356,24 @@
   top: 15px;
   font-size: 25px;
 }
+.timeline .has-header div.contenido .card i.icon.ion-images {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 25px;
+}
+.timeline .has-header div.contenido .card i.icon.ion-ios7-bookmarks-outline {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 25px;
+}
+.timeline .has-header div.contenido .card i.icon.ion-social-youtube {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 25px;
+}
 .timeline .has-header div.contenido .card div.item.item-body {
   border: 1px;
 }
@@ -375,4 +393,50 @@
 }
 .timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item i.icon img {
   width: 30px;
+}
+.timeline .has-header div.contenido .card div.item.item-image {
+  background: #d5e4ed;
+}
+.timeline .has-header div.contenido .card div.item.item-image img {
+  margin-top: -10px;
+}
+.timeline .has-header div.contenido .card div.item.item-image p.tittle {
+  color: #305f79;
+  font-size: 16px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  width: 90%;
+  margin: auto;
+  overflow: visible;
+  white-space: normal;
+  text-align: left;
+}
+.timeline .has-header div.contenido .card div.item.item-image p.video {
+  padding-top: 0px;
+  width: 90%;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.timeline div.tabs.tabs-icon-top {
+  background: #222;
+  height: 55px;
+}
+.timeline div.tabs.tabs-icon-top a.tab-item {
+  border-right: 1px solid #000;
+  color: #fff;
+}
+.timeline div.tabs.tabs-icon-top a.tab-item:hover {
+  cursor: pointer;
+  border-top: 5px solid #3780a8;
+  border-right: 1px solid #000;
+  color: #fff;
+}
+.timeline div.tabs.tabs-icon-top a.tab-item i.icon img {
+  width: 28px;
+  padding-top: 3px;
+}
+.timeline div.tabs.tabs-icon-top a.tab-item i.icon img.men {
+  padding-top: 5px;
+  width: 31px;
 }
