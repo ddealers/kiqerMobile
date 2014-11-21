@@ -33,6 +33,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       templateUrl: 'templates/login.html',
       controller: 'LoginCtrl'
     })
+
+    .state('registro', {
+      url: '/registro',
+      templateUrl: 'templates/registro.html',
+    })
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
@@ -80,16 +85,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('registro', {
-      url: '/registro',
-      views: {
-        'registro': {
-          templateUrl: 'templates/registro.html',
-          controller: 'registroCtrl'
-        }
-      }
-    });
-
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

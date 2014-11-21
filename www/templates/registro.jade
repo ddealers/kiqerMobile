@@ -1,8 +1,13 @@
-ion-view.login
+ion-view.registro
 	ion-content
 		h1
 			img(src='img/login_logo.png')
+		div.back
+				p.reg Registrate
 		div.list.list-inset
+			label.item.item-input
+				i.icon.ion-ios7-contact-outline
+				input(type="text" placeholder="Nombre de Usuario")
 			label.item.item-input
 				i.icon.ion-ios7-email-outline
 				input(type="text" placeholder="Correo Eléctronico")
@@ -10,15 +15,11 @@ ion-view.login
 				i.icon.ion-ios7-locked-outline
 				input(type="password" placeholder="Password")
 		div
-			button.button.button-block.button-positive.italic
-				span ENTRAR YA
-					i.icon.ion-ios7-arrow-forward
+			p He leído los 
+					span.line Términos de Condiciones 
+					| además de los 
+					span.line Avisos de Privacidad
 		div
-			ul
-				li.dudas ¿Olvidaste tu contraseña?
-				li ¿No tienes una cuenta?
-		div.border
-			button.button.button-block.button-positive
-				span 
-					i.icon.ion-social-facebook
-					|Entra con tu cuenta de Facebook
+			button.button.button-block.button-positive.italic
+				span CREAR MI CUENTA
+					i.icon.ion-ios7-arrow-forward

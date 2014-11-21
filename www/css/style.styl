@@ -1,10 +1,106 @@
+.scroll-bar-indicator
+	background none
+/* --login-- */
 soccer-background()
 	background url(../img/login_back.jpg) no-repeat
 	background-size cover 
-	
 .login
 	soccer-background()
 	img
 		width 62%
-	.list-inset {
-		margin: 20px 40px;
+	ion-content
+		h1
+			margin 50px 20px
+			width 400px
+			margin-bottom: 20px;
+		.card, .list-inset 
+			border-radius: 10px
+			label.item.item-input
+				i.icon
+					font-size 20px
+					padding-right 25px
+		div
+			width 90%
+			margin auto
+			.button.button-positive
+				border-color: #46518a;
+				background-color: #5562a3;
+				font-size 13px
+				transform: skew(-10deg);
+				-ms-transform: skew(-10deg);
+				-webkit-transform: skew(-10deg);
+				-moz-transform: skew(-10deg);
+				min-height: 44px
+				span
+					-webkit-transform: skew(10deg);
+					display block
+				i.icon
+					padding 10px
+			.button.button-positive.italic
+				font-style italic
+				background-color: #187ab1
+				border-color: #156b9c
+				font-size 16px
+				font-weight bold
+			ul 
+				color: #7d7d7d;
+				font-size: 11px;
+				display: inline-flex;
+				margin-bottom 30px
+				li.dudas 
+					margin-right 13px
+		div.border 
+			border-top 1px solid #353535
+			padding-top 20px
+/* --registro-- */
+soccer-background()
+	background url(../img/login_back.jpg) no-repeat
+	background-size cover 
+.registro
+	soccer-background()
+	img
+		width 62%
+	ion-content
+		h1
+			margin 50px 20px
+			width 400px
+			margin-bottom: 20px;
+		.card, .list-inset 
+			border-radius: 10px
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			label.item.item-input
+				i.icon
+					font-size 20px
+					padding-right 25px
+		div.back 
+			background #2f2f2f
+			padding 5px
+			p.reg 
+				color #fff
+				font-size 18px
+				font-weight bold
+		div
+			width 90%
+			margin auto
+			p 
+				color #7d7d7d;
+				text-align center
+				font-size 12px
+				span.line 
+					text-decoration: underline;
+			.button.button-positive
+				background-color: #187ab1
+				border-color: #156b9c
+				font-size 16px
+				font-weight bold
+				transform: skew(-10deg);
+				-ms-transform: skew(-10deg);
+				-webkit-transform: skew(-10deg);
+				-moz-transform: skew(-10deg);
+				min-height: 44px
+				span
+					-webkit-transform: skew(10deg);
+					display block
+				i.icon
+					padding 10px
