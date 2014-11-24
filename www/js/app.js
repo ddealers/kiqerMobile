@@ -99,6 +99,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('timeline', {
       url: '/timeline',
           templateUrl: 'templates/timeline.html',
+    })
+
+    .state('timeline_single', {
+      url: '/timeline_single',
+          templateUrl: 'templates/timeline_single.html',
     });
 
   // if none of the above states are matched, use this as the fallback

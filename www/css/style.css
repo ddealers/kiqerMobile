@@ -339,6 +339,22 @@
 .timeline .has-header div.contenido .card {
   margin: 20px 0;
 }
+.timeline .has-header div.contenido .card div.item.item-avatar.header {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  border: none;
+}
+.timeline .has-header div.contenido .card div.item.item-avatar.header h2 {
+  color: #fff;
+}
+.timeline .has-header div.contenido .card div.item.item-avatar.header p.dato {
+  color: #fff;
+}
+.timeline .has-header div.contenido .card div.item.item-avatar.header i.icon {
+  color: #fff;
+}
 .timeline .has-header div.contenido .card h2 {
   color: #357ea7;
   font-weight: bold;
@@ -386,16 +402,37 @@
 }
 .timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item {
   opacity: 1;
+  max-width: 60px;
+  position: absolute;
+}
+.timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item.uno {
+  left: 10px;
+}
+.timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item.dos {
+  left: 60px;
+}
+.timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item.tres {
+  left: 110px;
+}
+.timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item.cuatro {
+  left: 160px;
+}
+.timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item.cinco {
+  right: 20px;
 }
 .timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item i.icon {
   color: #3780a8;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 .timeline .has-header div.contenido .card div.item.tabs.tabs-secondary.tabs-icon-left a.tab-item i.icon img {
-  width: 30px;
+  width: 25px;
 }
 .timeline .has-header div.contenido .card div.item.item-image {
   background: #d5e4ed;
+  border: none;
+}
+.timeline .has-header div.contenido .card div.item.item-image video {
+  width: 100%;
 }
 .timeline .has-header div.contenido .card div.item.item-image img {
   margin-top: -10px;
@@ -439,4 +476,156 @@
 .timeline div.tabs.tabs-icon-top a.tab-item i.icon img.men {
   padding-top: 5px;
   width: 31px;
+}
+/* --timeline_single-- */
+.timeline_single div.bar.bar-header.bar-positive,
+.timeline_single .bar.bar-positive {
+  background: -moz-linear-gradient(top, #7bc0e6 0%, #377fa8 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7bc0e6), color-stop(100%, #377fa8));
+}
+.timeline_single div.bar.bar-header.bar-positive i.icon.ion-navicon,
+.timeline_single .bar.bar-positive i.icon.ion-navicon {
+  font-size: 35px;
+  padding-left: 10px;
+  border-right: 1px solid #2c6f94;
+  padding-right: 15px;
+}
+.timeline_single div.bar.bar-header.bar-positive i.icon.ion-edit,
+.timeline_single .bar.bar-positive i.icon.ion-edit {
+  position: absolute;
+  right: 10px;
+  padding-top: 5px;
+  font-size: 22px;
+  border-left: 1px solid #2c6f94;
+  padding-left: 13px;
+  height: 35px;
+}
+.timeline_single div.bar.bar-header.bar-positive h1 img,
+.timeline_single .bar.bar-positive h1 img {
+  position: absolute;
+  width: 115px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 3px;
+}
+.timeline_single .has-header {
+  background: #f3f4f4;
+}
+.timeline_single .has-header div.contenido div.list.card {
+  border-bottom: 1px solid #c0c1c1;
+  border-top: 1px solid #c0c1c1;
+  margin: 0px;
+}
+.timeline_single .has-header div.contenido div.list.card div.item.item-avatar {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  border: none;
+}
+.timeline_single .has-header div.contenido div.item.item-image {
+  border: none;
+}
+.timeline_single .has-header div.contenido div.item.tabs.tabs-secondary.tabs-icon-left {
+  border: none;
+  position: relative;
+}
+.timeline_single .has-header div.contenido div.item.tabs.tabs-secondary.tabs-icon-left .tab-item {
+  max-width: 60px;
+  position: absolute;
+  opacity: 1;
+}
+.timeline_single .has-header div.contenido div.item.tabs.tabs-secondary.tabs-icon-left .tab-item.uno {
+  left: 10px;
+}
+.timeline_single .has-header div.contenido div.item.tabs.tabs-secondary.tabs-icon-left .tab-item.dos {
+  left: 60px;
+}
+.timeline_single .has-header div.contenido div.item.tabs.tabs-secondary.tabs-icon-left .tab-item.tres {
+  left: 110px;
+}
+.timeline_single .has-header div.contenido div.item.tabs.tabs-secondary.tabs-icon-left .tab-item.cuatro {
+  color: #3780a8;
+  right: 20px;
+}
+.timeline_single .has-header div.contenido div.item.tabs.tabs-secondary.tabs-icon-left .tab-item img {
+  width: 25px;
+}
+.timeline_single .has-header div.contenido .card {
+  margin: 20px 0;
+  box-shadow: none;
+  border: none !important;
+}
+.timeline_single .has-header div.contenido .card h2 {
+  color: #357ea7;
+  font-weight: bold;
+}
+.timeline_single .has-header div.contenido .card h2 {
+  color: #fff;
+  font-weight: bold;
+}
+.timeline_single .has-header div.contenido .card p.dato {
+  font-size: 10px;
+  color: #fff;
+}
+.timeline_single .has-header div.contenido .card p.dato span {
+  border-left: 1px solid;
+  padding-left: 2px;
+}
+.timeline_single .has-header div.contenido .tittle {
+  color: #305f79;
+  font-size: 16px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  width: 90%;
+  margin: auto;
+  overflow: visible;
+  white-space: normal;
+  text-align: left;
+}
+.timeline_single .has-header div.contenido div.p {
+  background: #fff;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+.timeline_single .has-header div.contenido div.p p.parrafo {
+  font-size: 16px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  width: 90%;
+  margin: auto;
+  overflow: visible;
+  white-space: normal;
+  text-align: left;
+  font-size: 13px;
+  color: #666;
+}
+.timeline_single .has-header div.contenido div.p ul {
+  font-size: 16px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  width: 90%;
+  margin: auto;
+  overflow: visible;
+  white-space: normal;
+  text-align: left;
+  font-size: 13px;
+  color: #666;
+}
+.timeline_single .has-header div.list a.item.item-avatar {
+  background: #efefef;
+}
+.timeline_single .has-header div.list a.item.item-avatar h2 {
+  color: #357ea7;
+}
+.timeline_single .has-header div.list a.item.item-avatar p.comment {
+  overflow: visible;
+  white-space: normal;
+  font-size: 13px;
+}
+.timeline_single .has-header div.list a.item.item-avatar p.fecha {
+  font-size: 10px;
+  margin-top: -10px;
 }

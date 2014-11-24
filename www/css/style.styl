@@ -285,6 +285,18 @@ soccer-background()
 				border-top: 1px solid #c0c1c1
 			.card
 				margin 20px 0
+				div.item.item-avatar.header
+					position: absolute;
+					z-index: 3;
+					width: 100%;
+					background: rgba(0, 0, 0, .6);
+					border: none;
+					h2
+						color #fff
+					p.dato
+						color #fff
+					i.icon 
+						color #fff
 				h2
 					color #357ea7
 					font-weight bold
@@ -322,13 +334,28 @@ soccer-background()
 					background #d5e4ed
 					a.tab-item
 						opacity 1
+						max-width 60px 
+						position absolute
+						&.uno
+							left 10px
+						&.dos
+							left 60px
+						&.tres
+							left 110px
+						&.cuatro
+							left 160px
+						&.cinco
+							right 20px
 						i.icon
 							color #3780a8
-							margin-top 5px
+							margin-top 0px
 							img
-								width 30px
+								width 25px
 				div.item.item-image
 					background #d5e4ed
+					border none
+					video 
+						width 100%
 					img
 						margin-top -10px
 					p.tittle
@@ -365,4 +392,128 @@ soccer-background()
 					&.men 
 						padding-top 5px
 						width 31px
-						
+/* --timeline_single-- */
+.timeline_single
+	div.bar.bar-header.bar-positive
+	.bar.bar-positive
+		background: -moz-linear-gradient(top, #7bc0e6 0%, #377fa8 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7bc0e6), color-stop(100%,#377fa8)); 
+		i.icon.ion-navicon
+			font-size: 35px;
+			padding-left: 10px;
+			border-right: 1px solid #2c6f94;
+			padding-right: 15px;
+		i.icon.ion-edit
+			position absolute
+			right 10px
+			padding-top 5px
+			font-size 22px
+			border-left 1px solid #2c6f94
+			padding-left 13px
+			height 35px
+		h1 
+			img
+				position: absolute;
+				width: 115px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				top: 3px;
+	.has-header
+		background #f3f4f4
+		div.contenido
+			div.list.card
+				border-bottom: 1px solid #c0c1c1
+				border-top: 1px solid #c0c1c1
+				margin 0px
+				div.item.item-avatar
+					position absolute
+					z-index 3
+					width 100%
+					background: rgba(0, 0, 0, .6);
+					border: none;
+			div.item.item-image
+				border none
+			div.item.tabs.tabs-secondary.tabs-icon-left
+				border none
+				position relative
+				.tab-item
+					max-width 60px 
+					position absolute
+					opacity 1
+					&.uno
+						left 10px
+					&.dos
+						left 60px
+					&.tres
+						left 110px
+					&.cuatro
+						color #3780a8;
+						right 20px
+					img
+						width 25px
+			.card
+				margin 20px 0
+				box-shadow none
+				border none !important
+				h2
+					color #357ea7
+					font-weight bold
+				h2
+					color #fff
+					font-weight bold
+				p.dato 
+					font-size 10px 
+					color #fff
+					span
+						border-left 1px solid
+						padding-left 2px
+			.tittle
+				color: #305f79;
+				font-size: 16px;
+				padding-bottom 20px
+				padding-top: 10px;
+				width 90%
+				margin auto
+				overflow visible
+				white-space normal
+				text-align left
+			div.p
+				background #fff
+				padding-bottom 20px
+				border-bottom: 1px solid #ddd
+				margin-bottom: 10px;
+				p.parrafo
+					font-size: 16px;
+					padding-bottom 0px
+					padding-top: 10px;
+					width 90%
+					margin auto
+					overflow visible
+					white-space normal
+					text-align left
+					font-size: 13px;
+					color: #666;
+				ul
+					font-size: 16px;
+					padding-bottom 0px
+					padding-top: 10px;
+					width 90%
+					margin auto
+					overflow visible
+					white-space normal
+					text-align left
+					font-size: 13px;
+					color: #666;
+		div.list
+			a.item.item-avatar
+				background #efefef
+				h2
+					color: #357ea7;
+				p.comment
+					overflow visible
+					white-space normal
+					font-size 13px
+				p.fecha
+					font-size 10px
+					margin-top -10px
