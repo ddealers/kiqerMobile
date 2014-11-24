@@ -343,8 +343,9 @@
   position: absolute;
   z-index: 3;
   width: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
   border: none;
+  height: 50px;
 }
 .timeline .has-header div.contenido .card div.item.item-avatar.header h2 {
   color: #fff;
@@ -517,12 +518,27 @@
   border-top: 1px solid #c0c1c1;
   margin: 0px;
 }
+.timeline_single .has-header div.contenido div.list.card div.item.item-avatar.post {
+  background: none;
+  position: relative;
+  border: none;
+}
+.timeline_single .has-header div.contenido div.list.card div.item.item-avatar.post h2 {
+  color: #357ea7;
+}
+.timeline_single .has-header div.contenido div.list.card div.item.item-avatar.post p.dato {
+  color: #666;
+}
+.timeline_single .has-header div.contenido div.list.card div.none {
+  display: none;
+}
 .timeline_single .has-header div.contenido div.list.card div.item.item-avatar {
   position: absolute;
   z-index: 3;
   width: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
   border: none;
+  height: 50px;
 }
 .timeline_single .has-header div.contenido div.item.item-image {
   border: none;
@@ -613,6 +629,10 @@
   text-align: left;
   font-size: 13px;
   color: #666;
+}
+.timeline_single .has-header div.list div.item.item-body {
+  border: none;
+  padding-top: 0px;
 }
 .timeline_single .has-header div.list a.item.item-avatar {
   background: #efefef;
