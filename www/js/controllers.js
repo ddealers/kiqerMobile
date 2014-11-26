@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $famous){
+.controller('LoginCtrl', function($scope, $famous, User){
 	var Transitionable = $famous['famous/transitions/Transitionable'];
 	var Easing = $famous['famous/transitions/Easing'];
 
@@ -11,6 +11,12 @@ angular.module('starter.controllers', [])
 	}
 	$scope.transition = new Transitionable(0);
 	$scope.transition.set(1, {duration: 500, curve: 'easeOut'});
+	
+	var user = User.show(1, function(){
+		console.log(user);
+	});
+	//console.log(user);
+
 })
 
 .controller('DashCtrl', function($scope, $famous, $timeline) {
