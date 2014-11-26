@@ -23,4 +23,16 @@ angular.module('starter.services', [])
       return friends[friendId];
     }
   }
-});
+})
+
+.factory('User', function($resource){
+  var url = 'http://localhost:3000/api/v2/users/:id';
+  return $resource(url,
+  {id:'@id'},
+  {
+    create:{method:'POST'},
+    show:{method:'GET'},
+    update:{method:'PUT'},
+    destroy:{method:'DELETE'}
+  })
+})

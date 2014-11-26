@@ -1,6 +1,9 @@
 angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope){
+	var user = User.show(1, function(){
+		console.log(user);
+	});
 })
 .controller('RegisterCtrl', function($scope){
 	$scope.external = function(url){
