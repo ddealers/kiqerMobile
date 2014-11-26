@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'famous.angular'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngMaterial'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -37,73 +37,58 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('registro', {
       url: '/registro',
       templateUrl: 'templates/registro.html',
+      controller: 'RegisterCtrl'
     })
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
+
+    .state('type', {
+      url: '/type',
+      templateUrl: 'templates/type.html',
+    })
+
+    .state('section', {
+      url: "/section",
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: 'templates/sections.html',
+      controller: 'SectionCtrl'
     })
 
-    // Each tab has its own nav history stack:
-
-    .state('tab.dash', {
-      url: '/dash',
-      views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
-        }
-      }
-    })
-
-    .state('tab.friends', {
-      url: '/friends',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
-        }
-      }
-    })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
-        }
-      }
-    })
-
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
-        }
-      }
-    })
-
-    .state('profile_type', {
-      url: '/profile_type',
-          templateUrl: 'templates/profile_type.html',
-    })
-
-    .state('profile', {
+    .state('section.profile', {
       url: '/profile',
+      views: {
+        'content': {
           templateUrl: 'templates/profile.html',
+          controller: 'ProfileCtrl'
+        }
+      }
     })
 
-    .state('timeline', {
+    // setup an abstract state for the tabs directive
+    .state('section.tab', {
+      url: "/tab",
+      views: {
+        'content': {
+          abstract: true,
+          templateUrl: 'templates/tabs.html'
+        }
+      }
+    })
+
+    .state('section.tab.timeline', {
       url: '/timeline',
+      views: {
+        'timeline': {
           templateUrl: 'templates/timeline.html',
+        }
+      }
     })
 
-    .state('timeline_single', {
-      url: '/timeline_single',
+    .state('section.tab.post', {
+      url: '/post',
+      views: {
+        'timeline': {
           templateUrl: 'templates/timeline_single.html',
+        }
+      }
     });
 
   // if none of the above states are matched, use this as the fallback

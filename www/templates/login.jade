@@ -10,15 +10,17 @@ ion-view.login
 				i.icon.ion-ios7-locked-outline
 				input(type="password" placeholder="Password")
 		div
-			button.button.button-block.button-positive.italic
+			md-button.md-raised.button.button-block.button-positive.italic
 				span ENTRAR YA
 					i.icon.ion-ios7-arrow-forward
 		div
 			ul
-				li.dudas ¿Olvidaste tu contraseña?
-				li ¿No tienes una cuenta?
+				li.dudas 
+					md-button ¿Olvidaste tu contraseña?
+				li 
+					md-button(ui-sref="registro") ¿No tienes una cuenta?
 		div.border
-			button.button.button-block.button-positive
+			md-button.md-raised.button.button-block.button-positive
 				span 
 					i.icon.ion-social-facebook
-					|Entra con tu cuenta de Facebook
+					| Entra con tu cuenta de Facebook

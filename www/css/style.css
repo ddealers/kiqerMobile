@@ -1,6 +1,44 @@
 .scroll-bar-indicator {
   background: none;
 }
+.bar.bar-positive {
+  background: -moz-linear-gradient(top, #7bc0e6 0%, #377fa8 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7bc0e6), color-stop(100%, #377fa8));
+}
+.bar.bar-positive md-button .md-button-inner {
+  padding: 0;
+}
+.bar.bar-positive i.icon.ion-navicon {
+  font-size: 35px;
+  padding-left: 10px;
+  border-right: 1px solid #2c6f94;
+  padding-right: 15px;
+}
+.bar.bar-positive h1 img {
+  position: absolute;
+  width: 115px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 3px;
+}
+.tabs-primary > div.tabs {
+  background: #222;
+  height: 55px;
+}
+.tabs-primary > div.tabs a.tab-item {
+  border-top: 5px solid #575757;
+  border-right: 1px solid #1b1b1b;
+  border-left: 1px solid #1b1b1b;
+  color: #fff;
+}
+.tabs-primary > div.tabs a.tab-item.tab-item-active {
+  background: #383838;
+  border-top: 5px solid #3780a8;
+}
+.tabs-primary > div.tabs a.tab-item:hover {
+  cursor: pointer;
+}
 /* --login-- */
 .login {
   background: url("../img/login_back.jpg") no-repeat;
@@ -9,28 +47,30 @@
 .login img {
   width: 62%;
 }
-.login ion-content h1 {
-  margin: 50px 20px;
-  width: 400px;
-  margin-bottom: 20px;
+.login ion-content .scroll h1 {
+  margin: 50px auto 20px;
+  width: 90%;
 }
-.login ion-content .card,
-.login ion-content .list-inset {
+.login ion-content .scroll h1 img {
+  width: 100%;
+}
+.login ion-content .scroll .card,
+.login ion-content .scroll .list-inset {
   border-radius: 10px;
 }
-.login ion-content .card label.item.item-input i.icon,
-.login ion-content .list-inset label.item.item-input i.icon {
+.login ion-content .scroll .card label.item.item-input i.icon,
+.login ion-content .scroll .list-inset label.item.item-input i.icon {
   font-size: 20px;
   padding-right: 25px;
 }
-.login ion-content div {
+.login ion-content .scroll > div {
   width: 90%;
   margin: auto;
 }
-.login ion-content div .button.button-positive {
+.login ion-content .scroll > div .button.button-positive {
   border-color: #46518a;
   background-color: #5562a3;
-  font-size: 13px;
+  font-size: 10px;
   transform: skew(-10deg);
   -ms-transform: skew(-10deg);
   -webkit-transform: skew(-10deg);
@@ -38,31 +78,36 @@
   min-height: 32px !important;
   height: 20px;
 }
-.login ion-content div .button.button-positive span {
+.login ion-content .scroll > div .button.button-positive span {
   -webkit-transform: skew(10deg);
   display: block;
   margin-top: -5px;
+  line-height: 20px;
+  height: 100%;
 }
-.login ion-content div .button.button-positive i.icon {
+.login ion-content .scroll > div .button.button-positive i.icon {
   padding: 10px;
 }
-.login ion-content div .button.button-positive.italic {
+.login ion-content .scroll > div .button.button-positive i.icon::before {
+  line-height: 20px;
+}
+.login ion-content .scroll > div .button.button-positive.italic {
   font-style: italic;
   background-color: #187ab1;
   border-color: #156b9c;
   font-size: 16px;
   font-weight: bold;
 }
-.login ion-content div ul {
+.login ion-content .scroll > div ul {
   color: #7d7d7d;
-  font-size: 11px;
+  font-size: 9px;
   display: inline-flex;
   margin-bottom: 30px;
 }
-.login ion-content div ul li.dudas {
+.login ion-content .scroll > div ul li.dudas {
   margin-right: 13px;
 }
-.login ion-content div.border {
+.login ion-content .scroll div.border {
   border-top: 1px solid #353535;
   padding-top: 10px;
 }
@@ -74,44 +119,44 @@
 .registro img {
   width: 62%;
 }
-.registro ion-content h1 {
+.registro ion-content .scroll h1 {
   margin: 50px 20px;
   width: 400px;
   margin-bottom: 20px;
 }
-.registro ion-content .card,
-.registro ion-content .list-inset {
+.registro ion-content .scroll .card,
+.registro ion-content .scroll .list-inset {
   border-radius: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.registro ion-content .card label.item.item-input i.icon,
-.registro ion-content .list-inset label.item.item-input i.icon {
+.registro ion-content .scroll .card label.item.item-input i.icon,
+.registro ion-content .scroll .list-inset label.item.item-input i.icon {
   font-size: 20px;
   padding-right: 25px;
 }
-.registro ion-content div.back {
+.registro ion-content .scroll div.back {
   background: #2f2f2f;
   padding: 5px;
 }
-.registro ion-content div.back p.reg {
+.registro ion-content .scroll div.back p.reg {
   color: #fff;
   font-size: 18px;
   font-weight: bold;
 }
-.registro ion-content div {
+.registro ion-content .scroll > div {
   width: 90%;
   margin: auto;
 }
-.registro ion-content div p {
+.registro ion-content .scroll > div p {
   color: #7d7d7d;
   text-align: center;
   font-size: 12px;
 }
-.registro ion-content div p span.line {
+.registro ion-content .scroll > div p a {
   text-decoration: underline;
 }
-.registro ion-content div .button.button-positive {
+.registro ion-content .scroll > div .button.button-positive {
   background-color: #187ab1;
   border-color: #156b9c;
   font-size: 16px;
@@ -124,13 +169,18 @@
   height: 20px !important;
   margin-top: 20px;
 }
-.registro ion-content div .button.button-positive span {
+.registro ion-content .scroll > div .button.button-positive span {
   -webkit-transform: skew(10deg);
   display: block;
   margin-top: -5px;
+  line-height: 20px;
+  height: 100%;
 }
-.registro ion-content div .button.button-positive i.icon {
+.registro ion-content .scroll > div .button.button-positive i.icon {
   padding: 10px;
+}
+.registro ion-content .scroll > div .button.button-positive i.icon::before {
+  line-height: 20px;
 }
 /* --profile_type-- */
 .profile_type {
@@ -140,30 +190,39 @@
 .profile_type img {
   width: 62%;
 }
-.profile_type ion-content h1 {
+.profile_type ion-content .scroll h1 {
   margin: 50px 20px;
   width: 400px;
   margin-bottom: 20px;
 }
-.profile_type ion-content div {
+.profile_type ion-content .scroll > div {
   width: 90%;
   margin: auto;
 }
-.profile_type ion-content div ul {
+.profile_type ion-content .scroll > div ul {
   margin-top: 50px;
 }
-.profile_type ion-content div ul li {
+.profile_type ion-content .scroll > div ul li {
   position: relative;
   margin-bottom: 25px;
   background: #05ff11;
 }
-.profile_type ion-content div ul li img {
-  width: 40px;
-  padding-top: 5px;
-  padding-left: 5px;
+.profile_type ion-content .scroll > div ul li .button {
+  background: transparent;
+  height: 43px;
 }
-.profile_type ion-content div ul li span {
-  position: absolute;
+.profile_type ion-content .scroll > div ul li .button .md-button-inner {
+  padding: 3px;
+  text-align: left;
+}
+.profile_type ion-content .scroll > div ul li .button .md-button-inner div[layout="row"] {
+  height: 100%;
+}
+.profile_type ion-content .scroll > div ul li .button .md-button-inner div[layout="row"] img {
+  display: inline-block;
+  width: 40px;
+}
+.profile_type ion-content .scroll > div ul li .button .md-button-inner div[layout="row"] span {
   top: 10px;
   bottom: 0;
   margin: auto;
@@ -173,34 +232,15 @@
   font-size: 18px;
   font-weight: bold;
 }
-.profile_type ion-content div ul li i.icon {
+.profile_type ion-content .scroll > div ul li .button .md-button-inner div[layout="row"] div[flex="flex"] {
+  position: relative;
+}
+.profile_type ion-content .scroll > div ul li .button .md-button-inner div[layout="row"] div[flex="flex"] i.icon {
   position: absolute;
-  top: 12px;
-  right: 10px;
+  right: 0;
   font-size: 20px;
 }
 /* --profile-- */
-.profile div.bar.bar-header.bar-positive,
-.profile .bar.bar-positive {
-  background: -moz-linear-gradient(top, #7bc0e6 0%, #377fa8 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7bc0e6), color-stop(100%, #377fa8));
-}
-.profile div.bar.bar-header.bar-positive i.icon.ion-navicon,
-.profile .bar.bar-positive i.icon.ion-navicon {
-  font-size: 35px;
-  padding-left: 10px;
-  border-right: 1px solid #2c6f94;
-  padding-right: 15px;
-}
-.profile div.bar.bar-header.bar-positive h1 img,
-.profile .bar.bar-positive h1 img {
-  position: absolute;
-  width: 115px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 3px;
-}
 .profile div.bar.bar-subheader.bar-dark {
   background: #222;
   height: 35px;
@@ -226,9 +266,15 @@
   height: 50px;
   position: relative;
 }
-.profile .has-header div.contenido p img {
-  width: 50px;
+.profile .has-header div.contenido p md-button {
   margin: 10px;
+}
+.profile .has-header div.contenido p md-button .md-button-inner {
+  padding: 0;
+}
+.profile .has-header div.contenido p md-button .md-button-inner img {
+  width: 100%;
+/*margin 10px*/
 }
 .profile .has-header div.contenido p span {
   position: absolute;
@@ -239,13 +285,16 @@
   border: none;
   width: 95%;
 }
+.profile .has-header div.contenido div.list.list-inset label.item.item-input md-input-group {
+  margin: 0;
+}
 .profile .has-header div.contenido div.list.list-inset label.item.item-input input {
   color: #377fa8;
   border-bottom: 1px solid #acadad;
   font-size: 21px;
   font-weight: 200;
 }
-.profile .has-header div.contenido p.leyend {
+.profile .has-header div.contenido p.legend {
   font-size: 10px;
   color: #5c5c5c;
   margin-left: 22px;
@@ -271,31 +320,14 @@
   -webkit-transform: skew(10deg);
   display: block;
   margin-top: -5px;
+  line-height: 20px;
+  height: 100%;
 }
 .profile .has-header div.contenido div.b .button.button-positive i.icon {
-  padding-left: 35px;
+  padding: 10px;
 }
-.profile div.tabs.tabs-icon-top {
-  background: #222;
-  height: 55px;
-}
-.profile div.tabs.tabs-icon-top a.tab-item {
-  border-right: 1px solid #000;
-  color: #fff;
-}
-.profile div.tabs.tabs-icon-top a.tab-item:hover {
-  cursor: pointer;
-  border-top: 5px solid #3780a8;
-  border-right: 1px solid #000;
-  color: #fff;
-}
-.profile div.tabs.tabs-icon-top a.tab-item i.icon img {
-  width: 28px;
-  padding-top: 3px;
-}
-.profile div.tabs.tabs-icon-top a.tab-item i.icon img.men {
-  padding-top: 5px;
-  width: 31px;
+.profile .has-header div.contenido div.b .button.button-positive i.icon::before {
+  line-height: 20px;
 }
 /* --timeline-- */
 .timeline div.bar.bar-header.bar-positive,
@@ -455,28 +487,6 @@
   margin: auto;
   text-align: left;
   margin-bottom: 20px;
-}
-.timeline div.tabs.tabs-icon-top {
-  background: #222;
-  height: 55px;
-}
-.timeline div.tabs.tabs-icon-top a.tab-item {
-  border-right: 1px solid #000;
-  color: #fff;
-}
-.timeline div.tabs.tabs-icon-top a.tab-item:hover {
-  cursor: pointer;
-  border-top: 5px solid #3780a8;
-  border-right: 1px solid #000;
-  color: #fff;
-}
-.timeline div.tabs.tabs-icon-top a.tab-item i.icon img {
-  width: 28px;
-  padding-top: 3px;
-}
-.timeline div.tabs.tabs-icon-top a.tab-item i.icon img.men {
-  padding-top: 5px;
-  width: 31px;
 }
 /* --timeline_single-- */
 .timeline_single div.bar.bar-header.bar-positive,

@@ -1,46 +1,25 @@
-div.content-profile
-	ion-view.profile
-		div.bar.bar-header.bar-positive
-			i.icon.ion-navicon
-			h1 
-				img(src="./img/ki-logo.png")
-		div.bar.bar-subheader.bar-dark
-			h2 PERFIL
-				i.icon.ion-ios7-person
-		ion-content.has-header
-			div.contenido
-				div.foto-perfil
-					p
-						img(src="./img/img2.png")
-						span Cambia tu foto de perfil
-				div.list.list-inset
-					label.item.item-input
-						input(type="text" placeholder="Escribe tu nombre")
-					label.item.item-input
-						input(type="text" placeholder="Tu apellido")
-					label.item.item-input
-						input(type="text" placeholder="Tu fecha de nacimiento")
-					label.item.item-input
-						input(type="text" placeholder="País donde vives")
-				p.leyend *Todos los campos son obligatorios
-				div.b
-					button.button.button-block.button-positive
-						span Let's kiq it
-							i.icon.ion-ios7-arrow-forward
-		div.tabs.tabs-icon-top
-			a.tab-item
-				i.icon
-					img(src="./img/icon-1.png")
-				|Timeline
-			a.tab-item
-				i.icon           
-					img(src="./img/icon-2.png")
-				|Matches
-			a.tab-item
-				i.icon
-					img.men(src="./img/icon-3.png")
-				|Mensajes
-			a.tab-item
-				i.icon
-					img(src="./img/icon-4.png")
-				|ki-niela
+ion-view.profile
+	div.bar.bar-subheader.bar-dark
+		h2 PERFIL
+			i.icon.ion-ios7-person
+	ion-content.has-header
+		div.contenido
+			div.foto-perfil
+				p
+					md-button.md-fab
+						img.profile-img(src="./img/img2.png")
+					span Cambia tu foto de perfil
+			div.list.list-inset
+				label.item.item-input
+					md-text-float(label="Escribe tu nombre" ng-model="user.name")
+				label.item.item-input
+					md-text-float(label="Tu apellido" ng-model="user.surname")
+				label.item.item-input
+					md-text-float(label="Tu fecha de nacimiento" ng-model="user.birth")
+				label.item.item-input
+					md-text-float(label="País donde vives" ng-model="user.country")
+			p.legend *Todos los campos son obligatorios
+			div.b
+				md-button.button.button-block.button-positive
+					span Let's kiq it
+						i.icon.ion-ios7-arrow-forward

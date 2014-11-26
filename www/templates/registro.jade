@@ -16,10 +16,10 @@ ion-view.registro
 				input(type="password" placeholder="Password")
 		div
 			p He leído los 
-					span.line Términos de Condiciones 
+					a(ng-click="external('http://kiqer.com/terminos-condiciones')") Términos y Condiciones 
 					| además de los 
-					span.line Avisos de Privacidad
+					a(ng-click="external('http://kiqer.com/aviso-privacidad')") Avisos de Privacidad
 		div
-			button.button.button-block.button-positive.italic
+			md-button.button.button-block.button-positive.italic(ui-sref="type")
 				span CREAR MI CUENTA
 					i.icon.ion-ios7-arrow-forward
