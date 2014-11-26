@@ -1,0 +1,15 @@
+ion-side-menus
+	ion-pane(ion-side-menu-content)
+		ion-nav-bar.bar.bar-header.bar-positive.nav-title-slide-ios7
+			md-button(md-no-ink, ng-click="toggleLeft()")
+				i.icon.ion-navicon
+			h1 
+				img(src="./img/ki-logo.png")
+		ion-nav-view(name="content" animation="slide-left-right")
+	ion-side-menu(side="left")
+		header.bar.bar-header.bar-stable
+			h1 Menú
+		ion-content.has-header
+			ion-list
+				md-button.item(nav-clear,menu-close,ui-sref="section.profile") Perfil
+				md-button.item(nav-clear,menu-close,ui-sref="section.tab.timeline") Timeline
