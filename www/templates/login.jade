@@ -5,12 +5,12 @@ ion-view.login
 		div.list.list-inset
 			label.item.item-input
 				i.icon.ion-ios7-email-outline
-				input(type="text" placeholder="Correo Eléctronico")
+				input(type="text" placeholder="Correo Eléctronico" ng-model="user.email")
 			label.item.item-input
 				i.icon.ion-ios7-locked-outline
-				input(type="password" placeholder="Password")
+				input(type="password" placeholder="Password" ng-model="user.password")
 		div
-			md-button.md-raised.button.button-block.button-positive.italic
+			md-button.md-raised.button.button-block.button-positive.italic(ng-click="login()")
 				span ENTRAR YA
 					i.icon.ion-ios7-arrow-forward
 		div
