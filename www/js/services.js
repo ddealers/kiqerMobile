@@ -66,13 +66,15 @@ return friends[friendId];
 	}
 
 	var update = function(id, data){
-		$http.put('http://localhost:3000/api/v2/users/'+id, {user:data})
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.put('http://localhost:3000/api/v2/users/'+id, {user:data})
+		var deferred = $q.defer();
+		api('users/'+id, {user:data},
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'put');
+		return deferred.promise;
 	}
 
 	var show = function(id){

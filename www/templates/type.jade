@@ -5,7 +5,7 @@ ion-view.profile_type
 		div
 			ul
 				li
-					md-button.button.button-block(ui-sref="section.profile")
+					md-button.button.button-block(ng-click="updateUser(1)")
 						div(layout="row")
 							div(flex="20")
 								img(src="./img/img1.png")
@@ -14,7 +14,7 @@ ion-view.profile_type
 							div(flex)
 								i.icon.ion-ios7-arrow-forward
 				li 
-					md-button.button.button-block(ui-sref="section.profile")
+					md-button.button.button-block(ng-click="updateUser(2)")
 						div(layout="row")
 							div(flex="20")
 								img(src="./img/img2.png")
@@ -23,7 +23,7 @@ ion-view.profile_type
 							div(flex)
 								i.icon.ion-ios7-arrow-forward
 				li 
-					md-button.button.button-block(ui-sref="section.profile")
+					md-button.button.button-block(ng-click="updateUser(3)")
 						div(layout="row")
 							div(flex="20")
 								img(src="./img/img3.png")

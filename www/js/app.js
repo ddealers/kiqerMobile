@@ -43,6 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('type', {
       url: '/type',
       templateUrl: 'templates/type.html',
+      controller: 'TypeCtrl'
     })
 
     .state('section', {
@@ -95,4 +96,3 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $urlRouterProvider.otherwise('/login');
 
 });
-
