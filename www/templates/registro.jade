@@ -7,19 +7,19 @@ ion-view.registro
 		div.list.list-inset
 			label.item.item-input
 				i.icon.ion-ios7-contact-outline
-				input(type="text" placeholder="Nombre de Usuario")
+				input(type="text" placeholder="Nombre de Usuario" ng-model="user.name")
 			label.item.item-input
 				i.icon.ion-ios7-email-outline
-				input(type="text" placeholder="Correo Eléctronico")
+				input(type="text" placeholder="Correo Eléctronico" ng-model="user.email")
 			label.item.item-input
 				i.icon.ion-ios7-locked-outline
-				input(type="password" placeholder="Password")
+				input(type="password" placeholder="Password" ng-model="user.password")
 		div
 			p He leído los 
 					a(ng-click="external('http://kiqer.com/terminos-condiciones')") Términos y Condiciones 
 					| además de los 
 					a(ng-click="external('http://kiqer.com/aviso-privacidad')") Avisos de Privacidad
 		div
-			md-button.button.button-block.button-positive.italic(ui-sref="type")
+			md-button.button.button-block.button-positive.italic(ng-click="create()")
 				span CREAR MI CUENTA
 					i.icon.ion-ios7-arrow-forward

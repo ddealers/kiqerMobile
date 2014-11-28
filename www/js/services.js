@@ -52,32 +52,31 @@ return friends[friendId];
 				deferred.reject(response);
 			}, 'post');
 		return deferred.promise;
-		//$http.post('http://localhost:3000/api/v2/login', data)
 	}
 
-	/*
-	var login = function(data){
-		$http.post('http://localhost:3000/api/v2/login', data)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
-	}*/
-
-	var show = function(id){
-		$http.get('http://localhost:3000/api/v2/users/'+id)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+	var create = function(data){
+		var deferred = $q.defer();
+		api('users', {user:data},
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'post');
+		return deferred.promise;
 	}
 
 	var update = function(id, data){
 		$http.put('http://localhost:3000/api/v2/users/'+id, {user:data})
+		.success(function(res){
+			return res;
+		})
+		.error(function(e){
+			return e;
+		})
+	}
+
+	var show = function(id){
+		$http.get('http://localhost:3000/api/v2/users/'+id)
 		.success(function(res){
 			return res;
 		})
@@ -144,6 +143,7 @@ return friends[friendId];
 
 	return{
 		login:login,
+		create:create,
 		show:show,
 		update:update,
 		drop:drop,
