@@ -33,12 +33,22 @@ angular.module('starter.controllers', [])
 	}
 })
 
+.controller('ProfileCtrl', function($scope, Profile, $stateParams, $state){
+	$scope.profile = {};
+	$scope.create = function(){
+		Profile.create(5, {name: $scope.profile.name, surname: $scope.profile.surname, birth: $scope.profile.birth, country: $scope.profile.country}).then(function(s){
+			console.log(s);
+			if(s){
+				$state.go('section.tab.timeline');
+			}else{
+				console.log('error: ' + s);
+			}
+		}, function(e){console.log(e);});
+	}
+})
 
 .controller('SectionCtrl', function($scope, $ionicSideMenuDelegate){
 	$scope.toggleLeft = function(){
 		$ionicSideMenuDelegate.toggleLeft();
 	}
-})
-.controller('ProfileCtrl', function($scope){
-	
 })

@@ -155,7 +155,22 @@ return friends[friendId];
 
 })
 
-.factory('Profile', function($http){
+.factory('Profile', function($rootScope, $http, $q){
+	var api = function(request, params, onSuccess, onError, method){
+		var url = 'http://localhost:3000/api/v2/';
+		var theparams = params || {};
+		theparams.q = request;
+		if(!method){
+			$http.get(url, {params:theparams})
+			.success(onSuccess)
+			.error(onError);
+		}else{
+			$http[method](url+request, theparams)
+			.success(onSuccess)
+			.error(onError);
+		}
+	}
+
 	var show = function( id ){
 		$http.get('http://localhost:3000/api/v2/users/'+id+'/profile')
 		.success(function(data){
@@ -167,15 +182,15 @@ return friends[friendId];
 	}
 
 	var create = function(id, data){
-		return(data);
-
-		$http.post('http://localhost:3000/api/v2/users/'+id+'/profile', {profile: data})
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.post('http://localhost:3000/api/v2/users/'+id+'/profile', {profile: data})
+		var deferred = $q.defer();
+		api('users/'+id+'/profile', {profile:data},
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'post');
+		return deferred.promise;
 	}
 
 	var update = function(id, data){
