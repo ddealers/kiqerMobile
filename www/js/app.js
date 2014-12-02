@@ -53,7 +53,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: 'SectionCtrl'
     })
 
-    .state('section.profile', {
+    /*.state('section.editProfile', {
+      url: '/edit_profile',
+      views: {
+        'content': {
+          templateUrl: 'templates/edit_profile.html',
+          controller: 'EditProfileCtrl'
+        }
+      }
+    })*/
+
+    .state('section.Profile', {
       url: '/profile',
       views: {
         'content': {

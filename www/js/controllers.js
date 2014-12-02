@@ -1,5 +1,5 @@
-var myApp = angular.module('myApp', []);
-myApp.value('userId', '0');
+var kiqer = angular.module('kiqer', []);
+kiqer.value('userId', '0');
 angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, User, $stateParams, $state){
@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
 	}
 })
 
-.controller('ProfileCtrl', function($scope, Profile, $stateParams, $state){
+/*.controller('EditProfileCtrl', function($scope, Profile, $stateParams, $state){
 	$scope.profile = {};
 	$scope.create = function(){
 		Profile.create(userId, {name: $scope.profile.name, surname: $scope.profile.surname, birth: $scope.profile.birth, country: $scope.profile.country}).then(function(s){
@@ -57,7 +57,22 @@ angular.module('starter.controllers', [])
 			}
 		}, function(e){console.log(e);});
 	}
-})
+})*/
+
+/*.controller('ProfileCtrl', function($scope, Profile, Kiqs, $stateParams, $state){
+	$scope.profile = {};
+	
+	$scope.follow = function(idf){
+		Kiqs.follow({follow: userId, follower: idf}).then(function(s){
+			console.log(s);
+			if(s){
+				console.log('true: '+s);
+			}else{
+				console.log('error: ' + s);
+			}
+		}, function(e){console.log(e);});
+	}
+})*/
 
 .controller('SectionCtrl', function($scope, $ionicSideMenuDelegate){
 	$scope.toggleLeft = function(){

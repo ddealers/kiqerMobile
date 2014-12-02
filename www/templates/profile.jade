@@ -10,16 +10,12 @@ ion-view.profile
 						img.profile-img(src="./img/img2.png")
 					span Cambia tu foto de perfil
 			div.list.list-inset
-				label.item.item-input
-					md-text-float(label="Escribe tu nombre" ng-model="profile.name")
-				label.item.item-input
-					md-text-float(label="Tu apellido" ng-model="profile.surname")
-				label.item.item-input
-					md-text-float(label="Tu fecha de nacimiento" ng-model="profile.birth")
-				label.item.item-input
-					md-text-float(label="País donde vives" ng-model="profile.country")
-			p.legend *Todos los campos son obligatorios
+				p {{profile.name}}
+				p {{profile.surname}}
+				p {{profile.birth}}
+				p {{profile.country}}
+
 			div.b
-				md-button.button.button-block.button-positive.italic(ng-click="create()")
-					span Let's kiq it
+				md-button.button.button-block.button-positive(ng-click="follow(profile.ID)")
+					span Kiq
 						i.icon.ion-ios7-arrow-forward

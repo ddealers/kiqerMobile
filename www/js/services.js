@@ -328,27 +328,45 @@ return friends[friendId];
 
 })
 
-.factory('Kiqs', function($http){
+.factory('Kiqs', function($rootScope, $http, $q){
+	var api = function(request, params, onSuccess, onError, method){
+		var url = 'http://localhost:3000/api/v2/';
+		var theparams = params || {};
+		theparams.q = request;
+		if(!method){
+			$http.get(url, {params:theparams})
+			.success(onSuccess)
+			.error(onError);
+		}else{
+			$http[method](url+request, theparams)
+			.success(onSuccess)
+			.error(onError);
+		}
+	}
 
 	//CREATE KIQ to USER
 	var create = function(data){
-		$http.post('http://localhost:3000/api/v2/kiqs', {kiq:data})
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.post('http://localhost:3000/api/v2/kiqs', {kiq:data})
+		var deferred = $q.defer();
+		api('kiqs/', {kiq:data},
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'post');
+		return deferred.promise;
 	}
 
 	var drop = function(idk){
-		$http.delete('http://localhost:3000/api/v2/kiqs/'+idk)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.delete('http://localhost:3000/api/v2/kiqs/'+idk)
+		var deferred = $q.defer();
+		api('kiqs/'+idk,
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'delete');
+		return deferred.promise;
 	}
 
 	return {
