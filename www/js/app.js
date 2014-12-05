@@ -95,15 +95,26 @@ var kiqer = angular.module('starter', ['ionic', 'starter.controllers', 'starter.
         }
       }
     })
+    //fherrera@digitaldealers.mx
 
     .state('section.tab.post', {
+      url: '/post',
+      views: {
+        'timeline': {
+          templateUrl: 'templates/post.html',
+          controller: 'PostCtrl'
+        }
+      }
+    });
+
+    /*.state('section.tab.post', {
       url: '/post',
       views: {
         'timeline': {
           templateUrl: 'templates/timeline_single.html',
         }
       }
-    });
+    });*/
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

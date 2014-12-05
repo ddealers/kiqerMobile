@@ -31,9 +31,9 @@ return friends[friendId];
 	var api = function(request, params, onSuccess, onError, method){
 		var url = 'http://localhost:3000/api/v2/';
 		var theparams = params || {};
-		theparams.q = request;
+		//theparams.q = request;	
 		if(!method){
-			$http.get(url, {params:theparams})
+			$http.get(url+request, {params:theparams})
 			.success(onSuccess)
 			.error(onError);
 		}else{
@@ -106,7 +106,7 @@ return friends[friendId];
 	//all user post
 	var gpost = function(id){
 		var deferred = $q.defer();
-		api('posts/'+id,
+		api('users/'+id+'/posts',
 			function(response){
 				deferred.resolve(response);
 			}, function(response){
@@ -119,12 +119,12 @@ return friends[friendId];
 	var cpost = function(id, data){
 		//$http.post('http://localhost:3000/api/v2/users/'+id+'/posts', {post: data})
 		var deferred = $q.defer();
-		api('posts/'+id+'/posts', {post: data},
+		api('users/'+id+'/posts', {post: data},
 			function(response){
 				deferred.resolve(response);
 			}, function(response){
 				deferred.reject(response);
-			}, post);
+			}, 'post');
 		return deferred.promise;
 	}
 
@@ -150,7 +150,7 @@ return friends[friendId];
 				deferred.resolve(response);
 			}, function(response){
 				deferred.reject(response);
-			}, put);
+			}, 'put');
 		return deferred.promise;
 	}
 

@@ -51,20 +51,20 @@ angular.module('starter.controllers', [])
 				console.log('error: ' + s);
 			}
 		}, function(e){console.log(e);});
+
 	}
 })
 
-.controller('TimelineCtrl', function($scope, Posts, $stateParams, $state, userId){
-	$scope.post = {};
+.controller('TimelineCtrl', function($scope, Posts, User, $stateParams, $state, userId){
+	$scope.user = {};
 	$scope.show = function(){
-		Posts.show(userId.value).then(function(s){
+		User.gpost(userId.value).then(function(s){
 			console.log(s);
-			$scope.post = s;
+			$scope.user = s;
 		}, function(e){console.log(e);});
 	}
+	$scope.show();
 })
-
-
 
 //Update Profile
 .controller('ProfileCtrl', function($scope, Profile, Kiqs, $stateParams, $state, userId){
@@ -76,6 +76,8 @@ angular.module('starter.controllers', [])
 			$scope.profile = s;
 		})
 	}
+
+	$scope.show();
 
 	$scope.update = function(){
 		Profile.update(userId.value, {name: $scope.profile.name, surname: $scope.profile.surname, birth: $scope.profile.birth, country: $scope.profile.country}).then(function(s){
@@ -99,10 +101,43 @@ angular.module('starter.controllers', [])
 			}
 		}, function(e){console.log(e);});
 	}
-
-	$scope.show();
 })
 
+//Publicar Post
+.controller('PostCtrl', function($scope, Posts, User, $stateParams, $state, $ionicModal, userId){
+	$scope.post = {};
+
+	$ionicModal.fromTemplateUrl('post.html', {
+		scope: $scope,
+		animation: 'slide-in-up'
+	}).then(function(modal) {
+		$scope.modal = modal;
+		$scope.modal.show();
+	});
+	$scope.openModal = function() {
+		$scope.modal.show();
+	};
+	$scope.closeModal = function() {
+		$scope.modal.hide();
+	};
+	$scope.$on('$destroy', function() {
+		$scope.modal.remove();
+	});
+	$scope.$on('modal.hidden', function() {
+	});
+	$scope.$on('modal.removed', function() {
+	});
+
+	$scope.newpost = function(){
+		User.cpost(userId.value, post = {title: $scope.post.title, text: $scope.post.text, picture: $scope.post.picture, location: $scope.post.location}).then(function(s){
+			if(s){
+				console.log('true: '+ s);
+			}else{
+				console.log('fals: '+ s);
+			}
+		}, function(e){console.log(e);});
+	}
+})
 /*
 .controller('KiqCtrl', function($scope, Kiqs, $stateParams, $state, userId){
 	$scope.kiq = {};
