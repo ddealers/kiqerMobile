@@ -163,7 +163,7 @@ return friends[friendId];
 				deferred.resolve(response);
 			}, function(response){
 				deferred.reject(response);
-			}, delete);
+			}, 'delete');
 		return deferred.promise;
 	}
 
