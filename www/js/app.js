@@ -55,7 +55,7 @@ var kiqer = angular.module('starter', ['ionic', 'starter.controllers', 'starter.
       controller: 'SectionCtrl'
     })
 
-    .state('section.editProfile', {
+    .state('section.edit_profile', {
       url: '/edit_profile',
       views: {
         'content': {
@@ -91,6 +91,7 @@ var kiqer = angular.module('starter', ['ionic', 'starter.controllers', 'starter.
       views: {
         'timeline': {
           templateUrl: 'templates/timeline.html',
+          controller: 'TimelineCtrl'
         }
       }
     })

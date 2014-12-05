@@ -259,7 +259,7 @@ return friends[friendId];
 
 })
 
-.factory('Posts', function($http){
+.factory('Posts', function($rootScope, $http, $q){
 	var api = function(request, params, onSuccess, onError, method){
 		var url = 'http://localhost:3000/api/v2/';
 		var theparams = params || {};
@@ -433,7 +433,7 @@ return friends[friendId];
 	}
 
 	return {
-		show:show,
+		create:create,
 		drop:drop
 	}
 

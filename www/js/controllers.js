@@ -54,7 +54,20 @@ angular.module('starter.controllers', [])
 	}
 })
 
-.controller('ProfileCtrl', function($scope, Profile, $stateParams, $state, userId){
+.controller('TimelineCtrl', function($scope, Posts, $stateParams, $state, userId){
+	$scope.post = {};
+	$scope.show = function(){
+		Posts.show(userId.value).then(function(s){
+			console.log(s);
+			$scope.post = s;
+		}, function(e){console.log(e);});
+	}
+})
+
+
+
+//Update Profile
+.controller('ProfileCtrl', function($scope, Profile, Kiqs, $stateParams, $state, userId){
 	$scope.profile = {};
 	
 	$scope.show = function(){
@@ -64,7 +77,18 @@ angular.module('starter.controllers', [])
 		})
 	}
 
+	$scope.update = function(){
+		Profile.update(userId.value, {name: $scope.profile.name, surname: $scope.profile.surname, birth: $scope.profile.birth, country: $scope.profile.country}).then(function(s){
+			console.log(s);
+			if(s){
+				$state.go('section.tab.timeline');
+			}else{
+				console.log('error: ' + s);
+			}
+		}, function(e){console.log(e);});
+	}
 
+	$scope.kiqs = {}; 
 	$scope.follow = function(idf){
 		Kiqs.follow({follow: userId.value, follower: idf}).then(function(s){
 			console.log(s);
@@ -78,6 +102,23 @@ angular.module('starter.controllers', [])
 
 	$scope.show();
 })
+
+/*
+.controller('KiqCtrl', function($scope, Kiqs, $stateParams, $state, userId){
+	$scope.kiq = {};
+
+	$scope.follow = function(idf){
+		Kiqs.follow({follow: userId.value, follower: idf}).then(function(s){
+			console.log(s);
+			if(s){
+				console.log('true: '+s);
+			}else{
+				console.log('error: ' + s);
+			}
+		}, function(e){console.log(e);});
+	}
+})
+*/
 
 .controller('SectionCtrl', function($scope, $ionicSideMenuDelegate){
 	$scope.toggleLeft = function(){

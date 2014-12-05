@@ -8,15 +8,16 @@ div.content-timeline
 		ion-content.has-header
 			div.contenido
 				div.none
+				
 				div.list.card
 					div.item.item-avatar
 						img(src="./img/img2.png")
 						h2 Alejandro De Haro
-						p.dato Hace una hora 
-							span Ciudad de México
+						p.dato(ng-model="posts.create_at")
+							span(ng-model="posts.location")
 						i.icon.ion-ios7-paper-outline
 					div.item.item-body
-						p Lo que esperaba era un club totalmente grande, ganador y así fue; y me ha sorprendido el ambiente, porque a pesar de ser un club tan grande, siempre se siente como si todos nos conociéramos.
+						p(ng-model="posts.text")
 					div.item.tabs.tabs-secondary.tabs-icon-left
 						a.tab-item.uno(href="#")
 							i.icon
