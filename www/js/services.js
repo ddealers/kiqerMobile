@@ -78,69 +78,93 @@ return friends[friendId];
 	}
 
 	var show = function(id){
-		$http.get('http://localhost:3000/api/v2/users/'+id)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.get('http://localhost:3000/api/v2/users/'+id)
+		var deferred = $q.defer();
+		api('users/'+id,
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			});
+		return deferred.promise;
 	}
 
 	var drop = function(id){
-		$http.delete('http://localhost:3000/api/v2/users/'+id)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.delete('http://localhost:3000/api/v2/users/'+id)
+		var deferred = $q.defer();
+		api('users/'+id,
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'delete');
+		return deferred.promise;
 	}
 
 	//POSTS USERS
 
+	//all user post
+	var gpost = function(id){
+		var deferred = $q.defer();
+		api('posts/'+id,
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			});
+		return deferred.promise;
+	}
+
 	//Create User Post
 	var cpost = function(id, data){
-		$http.post('http://localhost:3000/api/v2/users/'+id+'/posts', {post: data})
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.post('http://localhost:3000/api/v2/users/'+id+'/posts', {post: data})
+		var deferred = $q.defer();
+		api('posts/'+id+'/posts', {post: data},
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, post);
+		return deferred.promise;
 	}
 
 	//Single Post
 	var spost = function(id, pid){
-		$http.get('http://localhost:3000/api/v2/users/'+id+'/posts/'+pid)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.get('http://localhost:3000/api/v2/users/'+id+'/posts/'+pid)
+		var deferred = $q.defer();
+		api('posts/'+id+'/posts/'+pid,
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			});
+		return deferred.promise;
 	}
 
 	//Update User Post
 	var upost = function(id, pid, data){
-		$http.put('http://localhost:3000/api/v2/users/'+id+'/posts/'+pid, {post:data})
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.put('http://localhost:3000/api/v2/users/'+id+'/posts/'+pid, {post:data})
+		var deferred = $q.defer();
+		api('posts/'+id+'/posts/'+pid, {post: data},
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, put);
+		return deferred.promise;
 	}
 
 	//Delete User Post
 	var dpost = function(id, pid){
-		$http.delete('http://localhost:3000/api/v2/users/'+id+'/posts/'+pid)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.delete('http://localhost:3000/api/v2/users/'+id+'/posts/'+pid)
+		var deferred = $q.defer();
+		api('posts/'+id+'/posts',
+			function(response){
+				deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, delete);
+		return deferred.promise;
 	}
 
 	return{
@@ -149,6 +173,7 @@ return friends[friendId];
 		show:show,
 		update:update,
 		drop:drop,
+		gpost:gpost,
 		cpost:cpost,
 		spost:spost,
 		upost:upost,
@@ -161,9 +186,9 @@ return friends[friendId];
 	var api = function(request, params, onSuccess, onError, method){
 		var url = 'http://localhost:3000/api/v2/';
 		var theparams = params || {};
-		theparams.q = request;
+		//theparams.q = request;	
 		if(!method){
-			$http.get(url, {params:theparams})
+			$http.get(url+request, {params:theparams})
 			.success(onSuccess)
 			.error(onError);
 		}else{
@@ -174,13 +199,19 @@ return friends[friendId];
 	}
 
 	var show = function( id ){
-		$http.get('http://localhost:3000/api/v2/users/'+id+'/profile')
-		.success(function(data){
-			return data;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.get('http://localhost:3000/api/v2/users/'+id+'/profile')
+		var deferred = $q.defer();
+		api('users/'+id+'/profile',
+			function(response){
+				console.log('OK: '+response);
+				deferred.resolve(response);
+				//deferred.reject(response);
+			}, function(response, status, headers, config){
+				//deferred.reject(response);
+				deferred.resolve(response);
+				console.log(status);
+			});
+		return deferred.promise;
 	}
 
 	var create = function(id, data){
@@ -196,26 +227,27 @@ return friends[friendId];
 	}
 
 	var update = function(id, data){
-		return(data);
-
-		$http.put('http://localhost:3000/api/v2/users/'+id+'/profile', {params: data})
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.put('http://localhost:3000/api/v2/users/'+id+'/profile', {params: data})
+		var deferred = $q.defer();
+		api('users/'+id+'/profile', {profile:data},
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'put');
+		return deferred.promise;
 	}
 
 	var drop = function(id){
-		//return(data);
-		$http.delete('http://localhost:3000/api/v2/users/'+id+'/profile')
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.delete('http://localhost:3000/api/v2/users/'+id+'/profile')
+		var deferred = $q.defer();
+		api('users/'+id+'/profile',
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'delete');
+		return deferred.promise;
 	}
 
 	return {
@@ -228,91 +260,122 @@ return friends[friendId];
 })
 
 .factory('Posts', function($http){
+	var api = function(request, params, onSuccess, onError, method){
+		var url = 'http://localhost:3000/api/v2/';
+		var theparams = params || {};
+		//theparams.q = request;	
+		if(!method){
+			$http.get(url+request, {params:theparams})
+			.success(onSuccess)
+			.error(onError);
+		}else{
+			$http[method](url+request, theparams)
+			.success(onSuccess)
+			.error(onError);
+		}
+	}
+
 	var show = function(pid){
-		$http.get('http://localhost:3000/api/v2/posts/'+pid)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.get('http://localhost:3000/api/v2/posts/'+pid)
+		var deferred = $q.defer();
+		api('posts/'+pid,
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			});
+		return deferred.promise;
 	}
 
 	var update = function(pid, data){
-		$http.put('http://localhost:3000/api/v2/posts/'+pid, {post:data})
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.put('http://localhost:3000/api/v2/posts/'+pid, {post:data})
+		var deferred = $q.defer();
+		api('posts/'+pid, {post:data},
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'put');
+		return deferred.promise;
 	}
 
 	var drop = function(pid){
-		$http.delete('http://localhost:3000/api/v2/posts/'+pid)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.delete('http://localhost:3000/api/v2/posts/'+pid)
+		var deferred = $q.defer();
+		api('posts/'+pid,
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'delete');
+		return deferred.promise;
 	}
 
 	//COMMENTS
 	
 	//All comments for a # posts
 	var comment = function(pid){
-		$http.get('http://localhost:3000/api/v2/posts/'+pid+'/comments')
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.get('http://localhost:3000/api/v2/posts/'+pid+'/comments')
+		var deferred = $q.defer();
+		api('posts/'+pid+'/comments',
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			});
+		return deferred.promise;
 	}
 
 	//Create new comment
 	var ccomment = function(pid, data){
-		$http.pots('http://localhost:3000/api/v2/posts/'+pid+'/comments', {comment:data})
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.pots('http://localhost:3000/api/v2/posts/'+pid+'/comments', {comment:data})
+		var deferred = $q.defer();
+		api('posts/'+pid+'/comments', {comment:data},
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'post');
+		return deferred.promise;
 	}
 
 	//Show Single comment
 	var scomment = function(pid, cid){
-		$http.get('http://localhost:3000/api/v2/posts/'+pid+'/comments'+cid)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.get('http://localhost:3000/api/v2/posts/'+pid+'/comments'+cid)
+		var deferred = $q.defer();
+		api('posts/'+pid+'/comments/'+cid,
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			});
+		return deferred.promise;
 	}
 
 	//Update comment
 	var ucomment = function(pid, cid, data){
-		$http.put('http://localhost:3000/api/v2/posts/'+pid+'/comments'+cid)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.put('http://localhost:3000/api/v2/posts/'+pid+'/comments'+cid)
+		var deferred = $q.defer();
+		api('posts/'+pid+'/comments/'+cid,
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'put');
+		return deferred.promise;
 	}
 
 	//Delete comment
 	var dcomment = function(pid, cid){
-		$http.delete('http://localhost:3000/api/v2/posts/'+pid+'/comments'+cid)
-		.success(function(res){
-			return res;
-		})
-		.error(function(e){
-			return e;
-		})
+		//$http.delete('http://localhost:3000/api/v2/posts/'+pid+'/comments'+cid)
+		var deferred = $q.defer();
+		api('posts/'+pid+'/comments/'+cid,
+			function(response){
+					deferred.resolve(response);
+			}, function(response){
+				deferred.reject(response);
+			}, 'delete');
+		return deferred.promise;
 	}
 
 	return {

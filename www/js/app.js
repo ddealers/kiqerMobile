@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngMaterial'])
+var kiqer = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngMaterial'])
+//var kiqer = angular.module('kiqer', []);
+.value('userId', {value: 0})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -53,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: 'SectionCtrl'
     })
 
-    /*.state('section.editProfile', {
+    .state('section.editProfile', {
       url: '/edit_profile',
       views: {
         'content': {
@@ -61,9 +63,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           controller: 'EditProfileCtrl'
         }
       }
-    })*/
+    })
 
-    .state('section.Profile', {
+    .state('section.profile', {
       url: '/profile',
       views: {
         'content': {
