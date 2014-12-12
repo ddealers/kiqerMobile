@@ -104,13 +104,13 @@ return friends[friendId];
 	//POSTS USERS
 
 	//all user post
-	var gpost = function(id){
+	var getPost = function(id){
 		var deferred = $q.defer();
 		api('users/'+id+'/posts',
 			function(response){
 				deferred.resolve(response);
 			}, function(response){
-				deferred.reject(response);
+				deferred.resolve(response);
 			});
 		return deferred.promise;
 	}
@@ -173,7 +173,7 @@ return friends[friendId];
 		show:show,
 		update:update,
 		drop:drop,
-		gpost:gpost,
+		getPost:getPost,
 		cpost:cpost,
 		spost:spost,
 		upost:upost,

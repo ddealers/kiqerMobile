@@ -58,10 +58,10 @@ angular.module('starter.controllers', [])
 .controller('TimelineCtrl', function($scope, Posts, User, $stateParams, $state, userId){
 	$scope.user = {};
 	$scope.show = function(){
-		User.gpost(userId.value).then(function(s){
+		User.getPost(userId.value).then(function(s){
 			console.log(s);
-			$scope.user = s;
-		}, function(e){console.log(e);});
+			$scope.timeline = s;
+		});
 	}
 	$scope.show();
 })

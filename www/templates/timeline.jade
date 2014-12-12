@@ -8,15 +8,15 @@ div.content-timeline
 		ion-content.has-header
 			div.contenido
 				div.none
-				div.list.card
+				div.list.card(ng-repeat='post in timeline')
 					div.item.item-avatar
 						img(src="./img/img2.png")
-						h2 Alejandro De Haro
-						p.dato({{user.create_at}})
-							span({{user.location}})
+						h2 {{post.user.name}}
+						p.dato '>' |<script>dodument.write('hola');</script>
+							span {{post.location}}
 						i.icon.ion-ios7-paper-outline
 					div.item.item-body
-						p({{user.text}})
+						p {{post.text}}
 					div.item.tabs.tabs-secondary.tabs-icon-left
 						a.tab-item.uno(href="#")
 							i.icon
