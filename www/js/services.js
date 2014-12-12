@@ -129,14 +129,15 @@ return friends[friendId];
 	}
 
 	//Single Post
-	var spost = function(id, pid){
+	var singlePost = function(id, pid){
 		//$http.get('http://localhost:3000/api/v2/users/'+id+'/posts/'+pid)
 		var deferred = $q.defer();
-		api('posts/'+id+'/posts/'+pid,
+		api('users/'+id+'/posts/'+pid,
 			function(response){
 				deferred.resolve(response);
 			}, function(response){
-				deferred.reject(response);
+				//deferred.reject(response);
+				deferred.resolve(response);
 			});
 		return deferred.promise;
 	}
@@ -175,7 +176,7 @@ return friends[friendId];
 		drop:drop,
 		getPost:getPost,
 		cpost:cpost,
-		spost:spost,
+		singlePost:singlePost,
 		upost:upost,
 		dpost:dpost
 	}

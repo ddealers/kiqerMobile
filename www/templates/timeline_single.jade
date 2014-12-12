@@ -10,12 +10,12 @@ div.content-timeline_single
 				div.list.card
 					div.item.item-avatar.post
 						img(src="./img/img2.png")
-						h2 Alejandro De Haro
-						p.dato Hace una hora 
-							span Ciudad de México
+						h2 {{post.user.name}}
+						p.dato {{post.time}} 
+							span {{post.location}}
 						i.icon.ion-ios7-paper-outline
 					div.item.item-body
-						p Lo que esperaba era un club totalmente grande, ganador y así fue; y me ha sorprendido el ambiente, porque a pesar de ser un club tan grande, siempre se siente como si todos nos conociéramos.
+						p {{post.text}}
 					div.none
 						div.block
 							div.item.item-avatar
@@ -38,30 +38,10 @@ div.content-timeline_single
 								img(src="./img/call.png")
 						a.tab-item.cuatro(href="#")
 							i.icon.ion-more.position
-				div.p
-					p.parrafo Segundo partido de la Selección Mexicana en Europa, esta vez Bielorrusia es el rival en turno. Después de que los dirigidos por Miguel Herrera vencieran a Holanda tres por dos, y que Carlos Vela tuviera un regreso goleador, van con la motivación para darle un buen encuentro a su rival. Abajo está la lista de los jugadores que iniciarán el enfrentamiento:
-					ul
-						li Alfredo Talavera
-						li Alfredo Talavera
-						li Paúl Aguilar
-						li Hugo Rodríguez
-						li Julio César Domínguez
-						li Luis Gerardo Venegas
-						li Miguel Ángel Ponce
-						li Jonathan Dos Santos
-						li Jesús Corona
-						li Alfonso González
-						li Giovani Dos Santos
-						li Raúl Jiménez
-					p.parrafo De esta forma la Selección Mexicana habrá jugado sus dos partidos en territorio europeo en esta fecha FIFA, veremos si logran sacar un resultado favorable. De esta forma la Selección Mexicana habrá jugado sus dos partidos en territorio europeo en esta fecha FIFA, veremos si logran sacar un resultado favorable.
-			div.list 
+			
+			div.list(ng-repeat='comment in comments')
 				a.item.item-avatar
 					img(src="./img/img2.png")
-					h2 Pablo Greda
-					p.comment Este es el ejemplo de un texto de un comentario
-					p.fecha Hace tres minutos
-				a.item.item-avatar
-					img(src="./img/img2.png")
-					h2 Ares Vázquez
-					p.comment Este es el ejemplo de un texto de un comentario largo para que vea el rey de chocolate como es que lo debe poner ahora que haga esta madre.
-					p.fecha 11 de Septiembre de 2014
+					h2 {{comment.user.name}}
+					p.comment {{comment.text}}
+					p.fecha {{comment.time}}

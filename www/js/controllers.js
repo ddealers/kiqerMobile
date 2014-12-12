@@ -51,19 +51,41 @@ angular.module('starter.controllers', [])
 				console.log('error: ' + s);
 			}
 		}, function(e){console.log(e);});
-
 	}
 })
 
 .controller('TimelineCtrl', function($scope, Posts, User, $stateParams, $state, userId){
 	$scope.user = {};
 	$scope.show = function(){
-		User.getPost(userId.value).then(function(s){
-			console.log(s);
-			$scope.timeline = s;
+		User.getPost(userId.value).then(function(data_tl){
+			console.log(data_tl);
+			for (var i = data_tl.length - 1; i >= 0; i--) {
+				data_tl[i].time = moment.utc(data_tl[i].created_at, "YYYYMMDD HH:mm:ss").fromNow();
+			};
+			$scope.timeline = data_tl;
 		});
 	}
-	$scope.show();
+
+	$scope.single = function(){
+		User.singlePost(userId.value, 2).then(function(s){
+			console.log(s);
+			if(s){
+				console.log('success: ',s);
+				s.time = moment.utc(s.created_at, "YYYYMMDD HH:mm:ss").fromNow();
+				$scope.post = s;
+				data_tl = s.comments;
+				for (var i = data_tl.length - 1; i >= 0; i--) {
+					data_tl[i].time = moment.utc(data_tl[i].created_at, "YYYYMMDD HH:mm:ss").fromNow();
+				};
+				$scope.comments = s.comments;
+			}else{
+				console.log('error: ' + s);
+			}
+		}, function(e){console.log(e);});
+	}
+
+	//$scope.show();
+	$scope.single();
 })
 
 //Update Profile
