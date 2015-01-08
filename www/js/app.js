@@ -116,6 +116,18 @@ var kiqer = angular.module('starter', ['ionic', 'starter.controllers', 'starter.
         }
       }
     });
+    
+    /*
+    .state('section.tab.single.', {
+      url: '/single',
+      views: {
+        'timeline': {
+          templateUrl: 'templates/timeline_single.html',
+          controller: 'TimelineCtrl'
+        }
+      }
+    });
+    */
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

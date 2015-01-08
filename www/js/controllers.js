@@ -67,7 +67,7 @@ angular.module('starter.controllers', [])
 	}
 
 	$scope.single = function(){
-		User.singlePost(userId.value, 2).then(function(s){
+		User.singlePost(userId.value, 1).then(function(s){
 			console.log(s);
 			if(s){
 				console.log('success: ',s);
@@ -84,7 +84,7 @@ angular.module('starter.controllers', [])
 		}, function(e){console.log(e);});
 	}
 
-	//$scope.show();
+	$scope.show();
 	$scope.single();
 })
 

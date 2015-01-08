@@ -105,6 +105,7 @@ return friends[friendId];
 
 	//all user post
 	var getPost = function(id){
+		//$http.get('http://localhost:3000/api/v2/users/'+id+'/posts)
 		var deferred = $q.defer();
 		api('users/'+id+'/posts',
 			function(response){

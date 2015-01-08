@@ -12,20 +12,10 @@ div.content-timeline_single
 						img(src="./img/img2.png")
 						h2 {{post.user.name}}
 						p.dato {{post.time}} 
-							span {{post.location}}
+							span México D.F{{post.location}}
 						i.icon.ion-ios7-paper-outline
 					div.item.item-body
 						p {{post.text}}
-					div.none
-						div.block
-							div.item.item-avatar
-								img(src="./img/img2.png")
-								h2 Alejandro De Haro
-								p.dato Hace una hora 
-									span Ciudad de México
-							div.item.item-image
-								img(src="./img/chicharito.png")
-								p.tittle Los once que inician contra Belorrusia con MiSelecciónMX...
 					div.item.tabs.tabs-secondary.tabs-icon-left
 						a.tab-item.uno(href="#")
 							i.icon
@@ -38,10 +28,20 @@ div.content-timeline_single
 								img(src="./img/call.png")
 						a.tab-item.cuatro(href="#")
 							i.icon.ion-more.position
-			
-			div.list(ng-repeat='comment in comments')
-				a.item.item-avatar
-					img(src="./img/img2.png")
-					h2 {{comment.user.name}}
-					p.comment {{comment.text}}
-					p.fecha {{comment.time}}
+				div.p
+					p.parrafo
+						textarea(id="comment")
+					md-button.button.button-block.button-positive.italic(ng-click="add_comment()")
+						span PUBLICAR >
+
+				div.list 
+					a.item.item-avatar
+						img(src="./img/img2.png")
+						h2 Pablo Greda
+						p.comment Este es el ejemplo de un texto de un comentario
+						p.fecha Hace tres minutos
+					a.item.item-avatar
+						img(src="./img/img2.png")
+						h2 Ares Vázquez
+						p.comment Este es el ejemplo de un texto de un comentario largo para que vea el rey de chocolate como es que lo debe poner ahora que haga esta madre.
+						p.fecha 11 de Septiembre de 2014

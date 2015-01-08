@@ -19,7 +19,7 @@ div.content-timeline
 						p {{post.text}}
 					div.item.tabs.tabs-secondary.tabs-icon-left
 						a.tab-item.uno(href="#")
-							i.icon
+							i.icon(ng-click="single({{post.id}})")
 								img(src="./img/comments.png")
 						a.tab-item.dos(href="#")
 							i.icon
